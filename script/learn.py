@@ -18,12 +18,12 @@ def iter_sentences(data_root, test_=False):
         f = bz2.BZ2File(fname)
         for doc_str in data.iter_docs(f):
             doc_str = doc_str.decode('utf-8')
-            sents = tools.sent_splitter_ja(doc_str)
+            sents = tools.sent_splitter_ja(doc_str, fix_parenthesis=True)
             for sent in sents:
                 sent = sent.strip()
                 if len(sent) == 0:
                     continue
-                words = tools.word_segmenter_ja(sent)
+                words = tools.word_segmenter_ja(sent, baseform=False)
                 yield words
         f.close()
 

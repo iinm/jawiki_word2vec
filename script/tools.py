@@ -47,17 +47,17 @@ def _mecab_node2seq(node):
         node = node.next
 
 
-def nodes2words(nodes):
+def nodes2words(nodes, baseform):
     '''
     mecab nodes -> [word]
-      - 原形を返す．
-      - 名詞句はまとめる．
+      - if baseform: 原形を返す．
+      - 名詞はまとめる．
     '''
     words = []
     noun_buff = ''
     for n in nodes:
         feat = n.feature.split(',')
-        word = feat[6] if feat[6] != '*' else n.surface # 原形
+        word = feat[6] if baseform and feat[6] != '*' else n.surface # 原形
         if feat[0] == '名詞':
             noun_buff += word
             if feat[1] == '接尾':
@@ -71,11 +71,11 @@ def nodes2words(nodes):
     return words
 
 
-def word_segmenter_ja(sent):
+def word_segmenter_ja(sent, baseform=True):
     if type(sent) == unicode:
         sent = sent.encode('utf-8')
     nodes = list(_mecab_node2seq(_mecab.parseToNode(sent)))
-    words = nodes2words(nodes)
+    words = nodes2words(nodes, baseform=baseform)
     words = [w.decode('utf-8') for w in words]
     return words
 
