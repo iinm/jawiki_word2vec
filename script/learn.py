@@ -28,7 +28,7 @@ class Sentences(object):
                     sent = sent.strip()
                     if len(sent) == 0:
                         continue
-                    words = tools.word_segmenter_ja(sent, baseform=False)
+                    words = tools.word_segmenter_ja(sent, baseform=True)
                     yield words
             f.close()
 
