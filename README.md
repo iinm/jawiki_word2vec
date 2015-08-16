@@ -13,6 +13,20 @@
 python script/WikiExtractor.py -c -o data/extracted data/jawiki-20150805-pages-articles.xml.bz2
 ```
 
+途中で、'Max template recursion exceeded!'が出てきて処理が終わらなかったので、途中からやり直し。
+
+```
+bzcat data/jawiki-20150805-pages-articles.xml.bz2 | head -35 > data/jawiki-20150805-pages-articles_tail.xml
+bzcat data/jawiki-20150805-pages-articles.xml.bz2 | tail -n +49536626 >> data/jawiki-20150805-pages-articles_tail.xml
+bzip2 jawiki-20150805-pages-articles_tail.xml
+```
+
+```
+python script/WikiExtractor.py -c -o data/extracted/sub data/jawiki-20150805-pages-articles_tail.xml.bz2
+```
+
+はじめから分割されたデータを使ったほうが良かったかも
+
 ### モデル作成
 
 ```
