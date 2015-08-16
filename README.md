@@ -16,7 +16,7 @@
 
 解析器はMeCabを使う。
 
-- 原形を使う
+- ~~原形を使う~~
 - 連続する名詞は一つの単語として扱う (例: 東京|都 → 東京都)
 
 詳細は、`script/tools.py#word_segmenter_ja`
@@ -55,7 +55,7 @@ python script/WikiExtractor.py -c -o data/extracted/sub data/jawiki-20150805-pag
 
 ### モデル作成
 
-(参考: 約1.5時間)
+(参考: 約時間)
 
 ```
 python script/learn.py data/jawiki_word2vec.pkl.gz
@@ -65,9 +65,24 @@ log:
 
 ```
 ...
-2015-08-16 10:34:34,603 : INFO : collected 11592499 word types from a corpus of 409577477 words and 18483422 sentences
-2015-08-16 10:34:39,038 : INFO : total 1313299 word types after removing those with count<5
 ...
 ```
 
+```
+ls -lh data/jawiki_word2vec.pkl.gz
+```
+
 ## テスト
+
+モデルをload。(参考) メモリを約GB使う。
+
+```
+python
+>>> import cPickle as pickle
+>>> import gzip
+>>> model = pickle.load(gzip.open('data/jawiki_word2vec.pkl.gz'))
+```
+
+### 類似語
+
+### 足し引き
