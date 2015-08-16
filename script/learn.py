@@ -48,7 +48,7 @@ if __name__ == '__main__':
     data_root = this_dirname + '/../data/extracted'
     #test_iter_sentences(data_root)
 
-    sentences = Sentences(data_root, test_=True)
+    sentences = Sentences(data_root)#, test_=True)
     model = gensim.models.Word2Vec(
         sentences, size=300, window=5, min_count=5, workers=8
     )
