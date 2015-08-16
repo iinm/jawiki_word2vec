@@ -30,6 +30,8 @@ class Sentences(object):
                         continue
                     words = tools.word_segmenter_ja(sent, baseform=True)
                     yield words
+                    words = tools.word_segmenter_ja(sent, baseform=True, np=False)
+                    yield words
             f.close()
 
 
