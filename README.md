@@ -1,7 +1,8 @@
-日本語Wikipediaのダンプデータからword2vecのモデルを作成する。(gensim)
+日本語Wikipediaのダンプデータからword2vecのモデルを作成する。
 
 ## 必要なもの
 
+- Python 2.7 (gensim, MeCab)
 - [jawiki-20150805-pages-articles.xml.bz2](https://ja.wikipedia.org/wiki/Wikipedia:%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89)
 - [WikiExtractor.py](http://medialab.di.unipi.it/wiki/Wikipedia_Extractor)
 
