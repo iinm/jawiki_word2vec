@@ -55,7 +55,7 @@ python script/WikiExtractor.py -c -o data/extracted/sub data/jawiki-20150805-pag
 
 ### モデル作成
 
-(参考: 約時間)
+(参考: 約1.5時間)
 
 ```
 python script/learn.py data/jawiki_word2vec.pkl.gz
