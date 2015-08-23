@@ -35,6 +35,7 @@ python script/WikiExtractor.py -c -o data/extracted data/jawiki-20150805-pages-a
 
 ```
 find data/extracted/ -type f -empty | xargs rm -i
+for f in $(find data/extracted/ -name "*.bz2"); do bzcat $f > /dev/null; done
 ```
 
 ---
