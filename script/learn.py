@@ -30,6 +30,7 @@ class Sentences(object):
                         continue
                     words = tools.word_segmenter_ja(sent, baseform=True)
                     yield words
+                    # TODO: 各名詞句ごとに区切る場合とまとめる場合を試す．
                     #words = tools.word_segmenter_ja(sent, baseform=True, np=False)
                     #yield words
             f.close()
@@ -51,6 +52,7 @@ if __name__ == '__main__':
     #test_iter_sentences(data_root)
 
     sentences = Sentences(data_root)#, test_=True)
+    # TODO: 次元を大きくしてみる．
     model = gensim.models.Word2Vec(
         sentences, size=300, window=5, min_count=5, workers=8
     )
