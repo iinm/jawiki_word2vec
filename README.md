@@ -6,7 +6,7 @@
 - [jawiki-20150805-pages-articles.xml.bz2](https://ja.wikipedia.org/wiki/Wikipedia:%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89)
 - [WikiExtractor.py](http://medialab.di.unipi.it/wiki/Wikipedia_Extractor)
 
-## (参考) 環境
+## 環境 (参考)
 
 - Intel(R) Xeon(R) CPU E3-1270 v3 @ 3.50GHz (8-core)
 - メモリ 16GB
